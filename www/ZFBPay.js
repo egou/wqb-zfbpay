@@ -11,4 +11,4 @@ var zfbpay = {
         ); 
     }
 }
-module.exports = wxpay;
+module.exports = zfbpay;
