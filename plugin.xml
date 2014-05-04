@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="cn.lovetennis.zfb"
+    version="0.1.0">
+    <name>ZFBPay</name>
+    <description>Lovetennis ZFBPay Plugin</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,ZFBPay</keywords>
+    <repo>https://github.com/egou/wqb-zfbpay</repo>
+
+     <js-module src="www/ZFBPay.js" name="zfbpay">
+        <clobbers target="navigator.zfbpay" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="zfbpay">
+                <param name="android-package" value="cn.lovetennis.zfb.ZFBPay"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/ZFBPay.java" target-dir="src/cn/lovetennis/zfb" />
+        <source-file src="src/android/Base64.java" target-dir="src/cn/lovetennis/zfb" />
+        <source-file src="src/android/Keys.java" target-dir="src/cn/lovetennis/zfb" />
+        <source-file src="src/android/Result.java" target-dir="src/cn/lovetennis/zfb" />
+        <source-file src="src/android/Rsa.java" target-dir="src/cn/lovetennis/zfb" />
+
+     </platform>
+
+
+     <!-- ios -->
+     <platform name="ios">
+         <config-file target="config.xml" parent="/*">
+             <feature name="ZFBPay">
+                 <param name="ios-package" value="CDVZFBPay" />
+             </feature>
+         </config-file>
+
+         <header-file src="src/ios/CDVZFBPay.h" />
+         <source-file src="src/ios/CDVZFBPay.m" />
+     </platform>
+
+ 
+</plugin>
+
